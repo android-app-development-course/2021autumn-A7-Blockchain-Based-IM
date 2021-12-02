@@ -8,6 +8,111 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BlockchainBasedIMAPP" />
+        android:theme="@style/Theme.BlockchainBasedIMAPP">
+
+        <activity
+            android:name=".ui.chat.MsgDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.chat.MsgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+
+        </activity>
+
+
+        <activity
+            android:name=".ui.contact.ChangeRemarkActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ui.contact.NewFriendActivity"
+            android:exported="true"
+            android:label="新的朋友"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ui.contact.AddFriendActivity"
+            android:exported="true"
+            android:label="添加朋友"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ui.contact.FriendActivity"
+            android:exported="true"
+            android:label=" "
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Register"
+            android:exported="true"
+            android:label="@string/Register" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:label="@string/Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".ui.setting.HelperActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.scnu.scnu.blockchain_based_im_app.ACTION_START_HelperActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.setting.RecoverChatHistoryActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.scnu.scnu.blockchain_based_im_app.ACTION_START_RecoverChatHistoryActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.setting.BackUpChatHistoryActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.scnu.scnu.blockchain_based_im_app.ACTION_START_BackUpChatHistoryActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.setting.ChangePasswordActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.scnu.scnu.blockchain_based_im_app.ACTION_START_ChangePasswordActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.setting.SetProfilePictureActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.scnu.scnu.blockchain_based_im_app.ACTION_START_SetProfilePictureActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.setting.FeedbackActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.scnu.scnu.blockchain_based_im_app.ACTION_START_FeedbackActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>

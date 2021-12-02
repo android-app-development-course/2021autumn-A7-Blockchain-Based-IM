@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable/ic_addfriend.xml" value="0.15" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable/ic_baseline_contacts_24.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable/ic_baseline_mic_24.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_addfriend.xml" value="0.11322463768115942" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_back_up_chat_history.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_change_password.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_change_remark.xml" value="0.13999999999999999" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_forget_password.xml" value="0.11322463768115942" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_friend.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_helper.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_login.xml" value="0.13999999999999999" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_msg.xml" value="0.129981884057971" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_msg_detail.xml" value="0.11911231884057971" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_new_friend.xml" value="0.11322463768115942" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_recover_chat_history.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_set_profile_picture.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/activity_welcome.xml" value="0.11322463768115942" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/bg_sound.xml" value="0.11322463768115942" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/chat_item.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/dialog_set_font_size.xml" value="0.1286231884057971" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/fragment_chat.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/fragment_contact.xml" value="0.11911231884057971" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/fragment_setting.xml" value="0.22" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/friends_item.xml" value="0.11322463768115942" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/msg_left_item.xml" value="0.1" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/msg_right_item.xml" value="0.11911231884057971" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/new_friend.xml" value="0.13999999999999999" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/register.xml" value="0.11322463768115942" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/layout/settings_activity.xml" value="0.10144927536231885" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/menu/bottom_nav_menu.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/menu/friend.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/xml/root_preferences.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

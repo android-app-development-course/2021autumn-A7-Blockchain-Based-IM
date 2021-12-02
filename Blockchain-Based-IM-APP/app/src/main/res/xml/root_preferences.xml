@@ -1,0 +1,54 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/header_personal_information">
+        <EditTextPreference
+            app:title="@string/set_user_name"
+            app:key="user_name"
+            app:useSimpleSummaryProvider="true" />
+        <Preference
+            app:title="@string/set_profile_picture"
+            app:key="set_profile_picture"
+            app:summary="@string/summary_set_profile_picture">
+            <intent android:action="com.scnu.blockchain_based_im_app"
+                android:targetPackage="com.scnu.blockchain_based_im_app" android:targetClass="com.scnu.blockchain_based_im_app.ui.setting.SetProfilePictureActivity" />
+        </Preference>
+        <Preference
+            app:title="@string/change_password"
+            app:key="change_password">
+        <intent android:action="com.scnu.blockchain_based_im_app"
+            android:targetPackage="com.scnu.blockchain_based_im_app" android:targetClass="com.scnu.blockchain_based_im_app.ui.setting.ChangePasswordActivity"/>
+        </Preference>
+    </PreferenceCategory>
+
+
+
+    <PreferenceCategory app:title="@string/header_back_up_and_recover">
+        <Preference
+            app:title="@string/back_up_chat_history"
+            app:key="back_up_chat_history">
+            <intent android:action="com.scnu.blockchain_based_im_app"
+                android:targetPackage="com.scnu.blockchain_based_im_app" android:targetClass="com.scnu.blockchain_based_im_app.ui.setting.BackUpChatHistoryActivity"/>
+        </Preference>
+
+        <Preference
+            app:title="@string/recover_chat_history"
+            app:key="recover_chat_history">
+            <intent android:action="com.scnu.blockchain_based_im_app"
+                android:targetPackage="com.scnu.blockchain_based_im_app" android:targetClass="com.scnu.blockchain_based_im_app.ui.setting.RecoverChatHistoryActivity"/>
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/header_help_and_feedback">
+        <Preference
+            app:title="@string/help"
+            app:key="help"/>
+        <Preference
+            app:title="@string/feedback"
+            app:key="feedback">
+            <intent android:action="com.scnu.blockchain_based_im_app"
+                android:targetPackage="com.scnu.blockchain_based_im_app" android:targetClass="com.scnu.blockchain_based_im_app.ui.setting.FeedbackActivity"/>
+        </Preference>
+    </PreferenceCategory>
+
+</PreferenceScreen>
