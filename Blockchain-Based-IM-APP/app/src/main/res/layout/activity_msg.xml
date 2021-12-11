@@ -49,34 +49,34 @@
         android:layout_below="@+id/ll_msg_bar" />
 
     <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F5F5F5">
+        android:layout_alignParentBottom="true"
+        android:background="#F5F5F5"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_voice"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:background="@drawable/ic_baseline_mic_24"/>
+            android:background="@drawable/ic_baseline_mic_24" />
 
         <Button
             android:id="@+id/btn_photo"
-            android:layout_marginLeft="5dp"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:background="@drawable/ic_baseline_photo_24"/>
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/ic_baseline_photo_24" />
 
         <EditText
             android:id="@+id/edt_msg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_margin="10dp"
             android:layout_weight="1"
-            android:layout_gravity="center"
             android:maxLines="3" />
 
         <Button
@@ -85,9 +85,9 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:background="#0099FF"
+            android:text="@string/send"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:text="@string/send" />
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
