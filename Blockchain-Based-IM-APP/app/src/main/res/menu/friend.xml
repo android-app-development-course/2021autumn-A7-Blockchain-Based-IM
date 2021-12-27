@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/newFriendMenu"
-        android:title="新的朋友"/>
+        android:title="好友请求"/>
 
     <item
         android:id="@+id/addFriend"

@@ -5,22 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity"
-    android:weightSum="6">
-
+    tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_weight="2"
-        android:layout_width="77dp"
-        android:layout_height="77dp"
+        android:layout_marginTop="80dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
-        android:src="@drawable/cat"/>
+        android:src="@drawable/app_icon"/>
 
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_weight="1"
         android:layout_height="70dp">
 
         <TextView
@@ -30,9 +28,32 @@
             android:gravity="right"
             android:textSize="20dp"
             android:textColor="#000000"
-            android:text="@string/psd"/>
+            android:text="id："/>
 
+        <EditText
+            android:id="@+id/userID"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:inputType="text"
+            android:maxLength="16"
+            android:maxLines="1" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="right"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:text="密码："/>
 
         <EditText
             android:id="@+id/password"
@@ -45,9 +66,8 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_weight="0.4"
         android:layout_width="200dp"
-        android:layout_height="25dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
         android:textColor="#000000"
@@ -55,18 +75,15 @@
         android:textSize="25sp"
         android:text="@string/login"/>
 
-
     <Button
         android:id="@+id/register"
         android:layout_width="200dp"
-        android:layout_height="25dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_weight="0.4"
         android:layout_marginBottom="10dp"
         android:textColor="#000000"
         android:textAllCaps="false"
         android:textSize="25sp"
         android:text="@string/register"/>
-
 
 </LinearLayout>

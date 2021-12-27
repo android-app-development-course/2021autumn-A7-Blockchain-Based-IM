@@ -1,20 +1,26 @@
 package com.scnu.blockchain_based_im_app.ui.contact
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
 import android.widget.PopupMenu
-import android.widget.TextView
+import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.scnu.blockchain_based_im_app.MainActivity
+import com.scnu.blockchain_based_im_app.MyDatabaseHelper
 import com.scnu.blockchain_based_im_app.R
 import com.scnu.blockchain_based_im_app.databinding.FragmentContactBinding
 import kotlinx.android.synthetic.main.fragment_contact.*
+import java.io.ByteArrayOutputStream
 
 class ContactFragment : Fragment() {
 
@@ -26,6 +32,8 @@ class ContactFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    val userID = MainActivity.userID
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,10 +62,6 @@ class ContactFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        initFriend()
-        val adapter = FriendAdapter(requireContext(), R.layout.friends_item, friendList)
-        friendListView.adapter = adapter
-
         val clickListener = View.OnClickListener { view ->
             when (view.id) {
                 R.id.friendMenu -> {
@@ -68,20 +72,36 @@ class ContactFragment : Fragment() {
         friendMenu.setOnClickListener(clickListener)
 
         friendListView.setOnItemClickListener { _, _, position, _ ->
-            val friend=friendList[position]
             val intent=Intent(requireActivity(), FriendActivity::class.java)//链接到好友主页
-            intent.putExtra("pos", position)
+            intent.putExtra("friendID", friendList[position].id)
             startActivity(intent)
         }
     }
 
-    private fun initFriend(){
-        repeat(10){
+    @SuppressLint("Range")
+    override fun onResume() {
+        super.onResume()
+        val adapter = FriendAdapter(requireContext(), R.layout.friends_item, friendList)
+        friendListView.adapter = adapter
 
-            friendList.add(Friend("莫小叉", R.drawable.temp_profile_picture))
-            friendList.add(Friend("吴", R.drawable.temp_profile_picture))
-            friendList.add(Friend("子龙", R.drawable.temp_profile_picture))
+        friendList.clear()
+        val dbHelper = MyDatabaseHelper(requireContext(), "IM_app.db", 2)
+        val db: SQLiteDatabase = dbHelper.readableDatabase
+        val cursor = db.rawQuery("select * from friendship where ownerID=$userID order by note",null)
+        if(cursor.moveToFirst()) {
+            do {
+                val friendID = cursor.getString(cursor.getColumnIndex("friendID"))
+                val friendNote = cursor.getString(cursor.getColumnIndex("note"))
+                val cursor2 = db.rawQuery("select * from user where id=$friendID",null)
+                if(cursor2.moveToFirst()) {
+                    val friendPhotoByteChar: ByteArray = cursor2.getBlob(cursor2.getColumnIndex("profile_photo"))
+                    val friendPhotoBitmap: Bitmap = BitmapFactory.decodeByteArray(friendPhotoByteChar,0,friendPhotoByteChar.size)
+                    friendList.add(Friend(friendID, friendNote, friendPhotoBitmap))
+                }
+                cursor2.close()
+            } while (cursor.moveToNext())
         }
+        cursor.close()
     }
 
     private fun showPopup(view: View) {
@@ -97,7 +117,7 @@ class ContactFragment : Fragment() {
                     startActivity(intent)
                 }
                 R.id.addFriend -> {
-                    val intent = Intent(requireActivity(),AddFriendActivity::class.java)//链接添加朋友
+                    val intent = Intent(requireActivity(),SearchFriendActivity::class.java)//链接添加朋友
                     startActivity(intent)
                 }
             }

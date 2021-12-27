@@ -4,38 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.contact.NewFriendActivity"
-    android:gravity="center_vertical"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ui.contact.SearchFriendActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/light_grey">
+
         <Button
-            android:id="@+id/newFriendReturn"
+            android:id="@+id/searchFriendReturn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/ic_baseline_arrow_back_24"
             android:layout_gravity="center"/>
+
         <TextView
-            android:id="@+id/welcomeTittle"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
+            android:layout_gravity="center"
             android:textSize="25sp"
             android:textColor="@color/black"
-            android:layout_gravity="center"
             android:gravity="center"
-            android:text="好友请求列表"/>
+            android:text="添加朋友"/>
+
         <LinearLayout
             android:layout_width="60dp"
             android:layout_height="match_parent"/>
+
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/newFriendRecyclerView"
+    <SearchView
+        android:id="@+id/sv_searchFriend"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:queryHint="搜索用户id"/>
 
 </LinearLayout>

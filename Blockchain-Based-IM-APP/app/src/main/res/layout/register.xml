@@ -4,7 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_marginTop="80dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/app_icon"/>
+
     <LinearLayout
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="70dp">
@@ -16,13 +25,17 @@
             android:gravity="right"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:text="@string/userName"/>
+            android:text="id："/>
 
         <EditText
-            android:id="@+id/userName"
-            android:layout_width="200dp"
+            android:id="@+id/userID"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:maxLines="1"
+            android:inputType="text"
+            android:maxLength="16"
+            android:hint="id注册后不可更改"/>
 
     </LinearLayout>
 
@@ -38,13 +51,16 @@
             android:gravity="right"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:text="@string/phone"/>
+            android:text="昵称："/>
 
         <EditText
-            android:id="@+id/phone"
-            android:layout_width="200dp"
+            android:id="@+id/name"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:inputType="text"
+            android:maxLength="16"
+            android:maxLines="1"/>
 
     </LinearLayout>
 
@@ -60,11 +76,11 @@
             android:gravity="right"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:text="@string/psd"/>
+            android:text="密码："/>
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:inputType="textPassword"/>
@@ -84,11 +100,11 @@
             android:gravity="right"
             android:textSize="20dp"
             android:textColor="@color/black"
-            android:text="@string/dupPassword"/>
+            android:text="重复密码："/>
 
         <EditText
             android:id="@+id/rePassword"
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:inputType="textPassword"/>
@@ -98,12 +114,11 @@
 
     <Button
         android:id="@+id/registerBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
-        android:textAllCaps="false"
+        android:textColor="#000000"
         android:textSize="25sp"
         android:text="@string/registerNow"/>
-
 
 </LinearLayout>

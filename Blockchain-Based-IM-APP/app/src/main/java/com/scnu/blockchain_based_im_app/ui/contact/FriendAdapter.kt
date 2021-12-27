@@ -18,7 +18,7 @@ class FriendAdapter(context: Context, val resourceId:Int, data:List<Friend>):
         val friendName: TextView =view.findViewById(R.id.friendName)
         val friend=getItem(position)
         if(friend!=null){
-            friendImage.setImageResource(friend.imageId)
+            friendImage.setImageBitmap(friend.bitmap)
             friendName.text=friend.name
         }
         return view

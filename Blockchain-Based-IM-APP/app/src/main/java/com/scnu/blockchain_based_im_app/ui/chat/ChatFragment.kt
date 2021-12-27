@@ -1,15 +1,25 @@
 package com.scnu.blockchain_based_im_app.ui.chat
 
+import android.annotation.SuppressLint
+import android.database.Cursor
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scnu.blockchain_based_im_app.R
 import com.scnu.blockchain_based_im_app.databinding.FragmentChatBinding
 import kotlinx.android.synthetic.main.fragment_chat.*
+
+import com.scnu.blockchain_based_im_app.MainActivity
+import com.scnu.blockchain_based_im_app.MyDatabaseHelper
+import com.scnu.blockchain_based_im_app.ui.contact.Friend
+import java.io.ByteArrayOutputStream
 
 class ChatFragment : Fragment() {
 
@@ -20,6 +30,7 @@ class ChatFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private val chatList= ArrayList<Chat>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,19 +58,58 @@ class ChatFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+    }
+
+    override fun onResume() {
+        super.onResume()
         val layoutManager = LinearLayoutManager(requireActivity())
         chatsRecycleView.layoutManager = layoutManager
-        val adapter = ChatAdapter(requireContext(), getChats())
+        initChatList()
+        val adapter = ChatAdapter(requireActivity(), requireContext(), chatList)
         chatsRecycleView.adapter = adapter
     }
 
-    private fun getChats(): List<Chat> {
-        val chatsList = ArrayList<Chat>()
-        for(i in 1..10) {
-            val chat = Chat(R.drawable.temp_profile_picture, "好友$i", "和好友${i}的最后一条消息")
-            chatsList.add(chat)
+    private fun initChatList(){
+        chatList.clear()
+        val dbHelper = MyDatabaseHelper(requireContext(), "IM_app.db", 2)
+        val db = dbHelper.readableDatabase
+        //把置顶的聊天项加到chatList中
+        var cursor = db.rawQuery("select * from chat where ownerID=? and stickOnTop = 1 order by lastTime DESC",
+            arrayOf(MainActivity.userID))
+        addChat(cursor)
+        cursor.close()
+        //把非置顶的聊天项加到chatList中
+        cursor = db.rawQuery("select * from chat where ownerID=? and stickOnTop = 0 order by lastTime DESC",
+            arrayOf(MainActivity.userID))
+        addChat(cursor)
+        cursor.close()
+    }
+
+    @SuppressLint("Range")
+    private fun addChat(cursor: Cursor) {
+        val dbHelper = MyDatabaseHelper(requireContext(), "IM_app.db", 2)
+        val db = dbHelper.readableDatabase
+        if(cursor.moveToFirst()) {
+            do {
+                val friendID = cursor.getString(cursor.getColumnIndex("friendID"))
+                val lastMessage = cursor.getString(cursor.getColumnIndex("lastMessage"))
+                val lastTime = cursor.getString(cursor.getColumnIndex("lastTime"))
+                val stickOnTop = cursor.getInt(cursor.getColumnIndex("stickOnTop"))
+                val msgIgnore = cursor.getInt(cursor.getColumnIndex("msgIgnore"))
+
+                val cursor2 = db.rawQuery("select * from user where id=?", arrayOf(friendID))
+                val cursor3 = db.rawQuery("select * from friendship where ownerID=? and friendID=?",
+                    arrayOf(MainActivity.userID,friendID))
+                if(cursor2.moveToFirst() && cursor3.moveToFirst()) {
+                    val photoByteChar:ByteArray = cursor2.getBlob(cursor2.getColumnIndex("profile_photo"))
+                    val bitmap: Bitmap = BitmapFactory.decodeByteArray(photoByteChar, 0, photoByteChar.size)
+                    val chatterName = cursor3.getString(cursor3.getColumnIndex("note"))
+                    chatList.add(Chat(friendID, bitmap, chatterName, lastMessage, lastTime, stickOnTop, msgIgnore))
+                }
+                cursor2.close()
+                cursor3.close()
+            } while (cursor.moveToNext())
         }
-        return chatsList
     }
 
 }

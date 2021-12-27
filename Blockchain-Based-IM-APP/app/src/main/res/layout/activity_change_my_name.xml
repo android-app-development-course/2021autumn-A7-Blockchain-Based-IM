@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.contact.ChangeRemarkActivity"
+    tools:context=".ui.setting.ChangeMyNameActivity"
     android:orientation="vertical">
 
 
@@ -13,7 +13,7 @@
         android:layout_height="60dp">
 
         <Button
-            android:id="@+id/changeReturn"
+            android:id="@+id/changeMyNameReturn"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:textSize="20dp"
@@ -29,19 +29,19 @@
         android:layout_gravity="center"
         android:textSize="35dp"
         android:textColor="@color/black"
-        android:text="设置备注"/>
+        android:text="设置昵称"/>
 
     <EditText
-        android:id="@+id/currentNote"
+        android:id="@+id/myCurrentName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:textSize="25dp"
-        android:text="当前备注"/>
+        android:text="当前昵称"/>
 
     <Button
-        android:id="@+id/changeRemark_ok"
+        android:id="@+id/changeMyName_ok"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"

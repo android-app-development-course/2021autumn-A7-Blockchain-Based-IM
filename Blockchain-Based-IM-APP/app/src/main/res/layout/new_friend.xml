@@ -2,29 +2,77 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="horizontal"
-    android:layout_height="60dp">
+    android:layout_height="80dp"
+    android:background="@drawable/underline">
 
     <ImageView
-        android:id="@+id/friendImage"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:id="@+id/applicantPhoto"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="10dp" />
 
-    <TextView
-        android:id="@+id/friendName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_marginLeft="10dp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+        <TextView
+            android:id="@+id/applicantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="申请者昵称"
+            />
 
-    <Button
-        android:id="@+id/addButton"
+        <TextView
+            android:id="@+id/applicantID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textSize="15sp"
+            android:text="申请者id"/>
+    </LinearLayout>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp"
-        android:text="已添加"/>
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/agree"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:text="同意"/>
+
+            <Button
+                android:id="@+id/refuse"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:text="拒绝" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_respond"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

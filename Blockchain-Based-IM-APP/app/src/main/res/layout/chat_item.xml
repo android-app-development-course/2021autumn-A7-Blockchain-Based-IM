@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:id="@+id/chatLayout"
     android:layout_width="match_parent"
     android:layout_height="80dp"
     android:background="@drawable/underline">
@@ -16,26 +17,60 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
-        <TextView
-            android:id="@+id/chatName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="备注"
-            android:textColor="@color/black"
-            android:textSize="20sp"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/chatName"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="备注"
+                android:lines="1"
+                android:ellipsize="end"
+                android:textColor="@color/black"
+                android:textSize="22sp"/>
+            <TextView
+                android:id="@+id/chatLastTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_marginStart="10dp"
+                android:lines="1"
+                android:ellipsize="end"
+                android:textSize="16sp"
+                android:text="2021/12/5 12:28"/>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/lastMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_marginTop="5dp"
-            android:text="最新的消息"
-            android:textColor="@color/grey"
-            android:textSize="18sp"/>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/chatLastMessage"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:ellipsize="end"
+                android:text="最新的消息"
+                android:textColor="@color/grey"
+                android:textSize="18sp"/>
+            <ImageView
+                android:id="@+id/notificationOff"
+                android:visibility="gone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="right|center"
+                android:background="@drawable/ic_baseline_notifications_off_24"/>
+        </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>

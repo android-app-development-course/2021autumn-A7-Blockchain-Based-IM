@@ -1,35 +1,32 @@
 package com.scnu.blockchain_based_im_app.ui.contact
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.database.sqlite.SQLiteDatabase
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Window
 import android.widget.ListView
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.scnu.blockchain_based_im_app.MainActivity
+import com.scnu.blockchain_based_im_app.MyDatabaseHelper
 import com.scnu.blockchain_based_im_app.R
 import kotlinx.android.synthetic.main.activity_friend.*
 import kotlinx.android.synthetic.main.activity_new_friend.*
 
 class NewFriendActivity : AppCompatActivity() {
 
-    private val friendList= ArrayList<Friend>()
+    private val userID = MainActivity.userID
+    private val dbHelper = MyDatabaseHelper(this, "IM_app.db", 2)
+    private val friendRequestList= ArrayList<Friend>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE); //注意顺序问题 隐藏标题
+        supportActionBar?.hide()
         setContentView(R.layout.activity_new_friend)
-
-        initFriend()
-        val adapter=FriendAdapter(this,R.layout.new_friend,friendList)
-        val newFriendListView: ListView =findViewById(R.id.newFriendListView)
-        newFriendListView.adapter=adapter
-
-        newFriendListView.setOnItemClickListener { _, _, position, _ ->
-            val friend=friendList[position]
-            //val str="wgnb"
-            val intent= Intent(this,FriendActivity::class.java)//链接到好友主页
-            intent.putExtra("pos",position)
-            startActivity(intent)
-        }
 
         newFriendReturn.setOnClickListener {
             finish()
@@ -37,13 +34,32 @@ class NewFriendActivity : AppCompatActivity() {
 
     }
 
-    private fun initFriend(){
-        repeat(10){
-
-            friendList.add(Friend("莫小叉",R.drawable.temp_profile_picture))
-            friendList.add(Friend("吴",R.drawable.temp_profile_picture))
-            friendList.add(Friend("子龙",R.drawable.temp_profile_picture))
+    @SuppressLint("Range")
+    override fun onResume() {
+        Log.d("xiangge","onresume")
+        super.onResume()
+        friendRequestList.clear()
+        val db:SQLiteDatabase = dbHelper.readableDatabase
+        val cursor = db.rawQuery("select * from friend_request where respondentID=$userID",null)
+        if(cursor.moveToFirst()) {
+            do {
+                val applicantID = cursor.getString(cursor.getColumnIndex("applicantID"))
+                val cursor2 = db.rawQuery("select * from user where id=$applicantID",null)
+                if(cursor2.moveToFirst()) {
+                    val applicantName = cursor2.getString(cursor2.getColumnIndex("name"))
+                    val applicantPhotoByteChar: ByteArray = cursor2.getBlob(cursor2.getColumnIndex("profile_photo"))
+                    val applicantPhotoBitmap: Bitmap = BitmapFactory.decodeByteArray(applicantPhotoByteChar,0,applicantPhotoByteChar.size)
+                    friendRequestList.add(Friend(applicantID, applicantName, applicantPhotoBitmap))
+                }
+                cursor2.close()
+            } while (cursor.moveToNext())
         }
+        cursor.close()
+
+        val layoutManager = LinearLayoutManager(this)
+        newFriendRecyclerView.layoutManager = layoutManager
+        val adapter = FriendRequestAdapter(this, friendRequestList)
+        newFriendRecyclerView.adapter = adapter
     }
 
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 底层颜色值 -->
+    <item>
+        <shape>
+            <solid android:color="#DDDDDD" />
+        </shape>
+    </item>
+
+    <!-- 顶层颜色值 -->
+    <item android:bottom="2dp"> <!--设置只有底部有边框-->
+        <shape>
+            <solid android:color="#EEEEEE" />
+        </shape>
+    </item>
+</layer-list>

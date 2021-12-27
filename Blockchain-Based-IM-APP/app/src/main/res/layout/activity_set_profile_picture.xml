@@ -48,17 +48,19 @@
         android:layout_marginTop="240dp"
         android:layout_marginBottom="54dp"
         android:text="@string/select_from_gallery"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_take_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_take_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/take_a_photo"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
@@ -67,14 +69,14 @@
         app:layout_constraintVertical_bias="0.65" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/currentProfilePhoto"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="64dp"
         android:contentDescription="@string/current_profile_picture"
-        android:src="@drawable/temp_profile_picture"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:src="@drawable/app_icon"
+        app:layout_constraintBottom_toTopOf="@+id/btn_set_photo_from_album"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
         android:text="@string/current_profile_picture"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/currentProfilePhoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,5 +1,7 @@
 package com.scnu.blockchain_based_im_app.ui.chat
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ChatViewModel : ViewModel() {
@@ -8,4 +10,5 @@ class ChatViewModel : ViewModel() {
 //        value = "这是消息列表"
 //    }
 //    val text: LiveData<String> = _text
+
 }
