@@ -5,17 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/light_light_grey"
     tools:context=".ui.contact.SearchFriendActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/light_grey">
+        android:background="@color/light_light_grey">
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"/>
 
         <Button
             android:id="@+id/searchFriendReturn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:background="@drawable/ic_baseline_arrow_back_24"
             android:layout_gravity="center"/>
 
@@ -30,7 +35,7 @@
             android:text="添加朋友"/>
 
         <LinearLayout
-            android:layout_width="60dp"
+            android:layout_width="40dp"
             android:layout_height="match_parent"/>
 
     </LinearLayout>
@@ -39,6 +44,9 @@
         android:id="@+id/sv_searchFriend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/circle_list"
         android:queryHint="搜索用户id"/>
 
 </LinearLayout>

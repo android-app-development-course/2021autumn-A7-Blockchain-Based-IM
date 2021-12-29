@@ -2,6 +2,7 @@ package com.scnu.blockchain_based_im_app.ui.chat
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.DateFormat
@@ -10,7 +11,6 @@ import android.view.MotionEvent
 import android.view.View
 import android.widget.PopupMenu
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.scnu.blockchain_based_im_app.MainActivity
 import com.scnu.blockchain_based_im_app.MyDatabaseHelper
@@ -26,6 +26,9 @@ class MsgActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+        }
         setContentView(R.layout.activity_msg)
         supportActionBar?.hide()
 

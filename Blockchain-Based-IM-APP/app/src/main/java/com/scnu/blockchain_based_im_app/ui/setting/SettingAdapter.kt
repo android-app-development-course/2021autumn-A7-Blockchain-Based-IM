@@ -72,6 +72,7 @@ class SettingAdapter(val context: Context, val fragment: SettingFragment, val se
                                             getDialog()?.cancel()
                                         })
                                 builder.create()
+                                //builder.getWindow()?.setBackgroundDrawableResource(R.drawable.circle_list)
                             } ?: throw IllegalStateException("Activity cannot be null")
                         }
                     }

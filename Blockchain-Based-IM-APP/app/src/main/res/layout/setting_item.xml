@@ -3,8 +3,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="5dp"
     android:background="@drawable/underline"
     android:orientation="horizontal">
 
@@ -13,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
         android:gravity="center_vertical"
         android:text="黄承鹏"
         android:textColor="@color/black"
@@ -27,6 +26,7 @@
         android:layout_width="24dp"
         android:layout_height="32dp"
         android:layout_gravity="center"
+        android:layout_marginRight="5dp"
         android:gravity="right"
         android:src="@drawable/ic_forward01" />
 

@@ -1,7 +1,9 @@
 package com.scnu.blockchain_based_im_app.ui.setting
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.scnu.blockchain_based_im_app.MainActivity
@@ -14,6 +16,9 @@ class ChangePasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         this.title = "修改密码"
         super.onCreate(savedInstanceState)
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+        }
         supportActionBar?.hide()
         setContentView(R.layout.activity_change_password)
 
@@ -51,13 +56,21 @@ class ChangePasswordActivity : AppCompatActivity() {
     }
 
     private fun showMyDialog(msg: String) {
-        AlertDialog.Builder(this).apply {
+        /*AlertDialog.Builder(this).apply {
             setTitle("提示")
             setMessage(msg)
             setCancelable(false)
             setPositiveButton("确定", null)
             show()
-        }
+        }*/
+
+        val builder = AlertDialog.Builder(this)
+            .setTitle("提示")
+            .setMessage(msg)
+            .setCancelable(false)
+            .setPositiveButton("确定",null)
+            .show()
+        builder.getWindow()?.setBackgroundDrawableResource(R.drawable.circle_list)
     }
 
 }

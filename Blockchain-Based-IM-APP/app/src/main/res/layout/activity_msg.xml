@@ -16,13 +16,17 @@
             android:id="@+id/ll_msg_bar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/light_grey"
+            android:background="@color/light_light_grey"
             android:orientation="horizontal">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
 
             <Button
                 android:id="@+id/btn_back_to_chat"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_baseline_arrow_back_24" />
 
@@ -39,10 +43,14 @@
 
             <Button
                 android:id="@+id/btn_msg_detail"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:background="@drawable/ic_baseline_more_horiz_24" />
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
 
         </LinearLayout>
 
@@ -55,8 +63,8 @@
         <LinearLayout
             android:id="@+id/inputMsgBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#F5F5F5"
+            android:layout_height="57dp"
+            android:background="@color/light_light_grey"
             android:orientation="horizontal">
 
             <Button
@@ -77,10 +85,11 @@
             <EditText
                 android:id="@+id/edt_msg"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/white"
                 android:maxLines="3" />
 
             <Button

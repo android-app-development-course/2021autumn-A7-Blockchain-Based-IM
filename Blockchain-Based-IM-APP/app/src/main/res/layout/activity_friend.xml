@@ -5,16 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/light_light_grey"
     tools:context=".ui.contact.FriendActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:background="@color/white"
         android:layout_height="70dp">
 
         <Button
             android:id="@+id/friendReturn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="30dp"
             android:textSize="20dp"
             android:layout_gravity="center"
             android:background="@drawable/ic_baseline_arrow_back_24"/>
@@ -22,15 +25,12 @@
     </LinearLayout>
 
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1.2dp"
-        android:background="#90909090" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <ImageView
@@ -43,6 +43,7 @@
             android:orientation="vertical"
             android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
+            android:background="@color/white"
             android:layout_height="match_parent">
 
             <TextView
@@ -74,15 +75,15 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.7dp"
-        android:background="#90909090" />
+        android:layout_height="7dp" />
 
     <Button
         android:id="@+id/remark"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:textSize="18sp"
+        android:layout_height="60dp"
+        android:textSize="23sp"
         android:textStyle="bold"
+        android:background="@color/white"
         android:text="修改备注"/>
 
     <View
@@ -93,9 +94,10 @@
     <Button
         android:id="@+id/sendMessage"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:textSize="18sp"
+        android:layout_height="60dp"
+        android:textSize="23sp"
         android:textStyle="bold"
+        android:background="@color/white"
         android:text="发消息"/>
 
     <View
@@ -106,10 +108,11 @@
     <Button
         android:id="@+id/deleteFriend"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:textColor="@color/red"
-        android:textSize="18sp"
+        android:textSize="23sp"
         android:textStyle="bold"
+        android:background="@color/white"
         android:text="删除好友"/>
 
 </LinearLayout>

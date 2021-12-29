@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/light_light_grey"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/ll_setting_bar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/light_grey"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <TextView
@@ -68,59 +69,14 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="7dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/settingRecycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="#000000" />
-
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_set_user_name"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/set_user_name"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_set_profile_picture"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/set_profile_picture"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_change_password"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/change_password"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_set_font_size"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/set_font_size"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_back_up_chat_history"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/back_up_chat_history"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_recover_chat_history"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/recover_chat_history"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_help"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/help"/>-->
-
-<!--    <Button-->
-<!--        android:id="@+id/btn_feedback"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/feedback"/>-->
 
 </LinearLayout>

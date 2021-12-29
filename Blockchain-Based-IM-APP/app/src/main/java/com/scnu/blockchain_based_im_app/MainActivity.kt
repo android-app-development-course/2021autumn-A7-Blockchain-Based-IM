@@ -1,7 +1,9 @@
 package com.scnu.blockchain_based_im_app
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -20,6 +22,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+        }
         supportActionBar?.hide()
 
         userID = intent.getStringExtra("userID").toString()
@@ -44,5 +49,5 @@ class MainActivity : AppCompatActivity() {
     fun finishMe() {
         finish()
     }
-
+//注册
 }

@@ -1,11 +1,15 @@
 package com.scnu.blockchain_based_im_app.ui.contact
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.scnu.blockchain_based_im_app.MainActivity
@@ -17,7 +21,10 @@ class AddFriendActivity : AppCompatActivity() {
     @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+        }
+        supportActionBar?.hide()//隐藏标题栏
         setContentView(R.layout.activity_addfriend)
 
         val newFriendID = intent.getStringExtra("newFriendID")
@@ -61,12 +68,33 @@ class AddFriendActivity : AppCompatActivity() {
     }
 
     private fun showDialog(msg: String) {
-        AlertDialog.Builder(this).apply {
+        /*AlertDialog.Builder(this).apply {
             setTitle("提示")
             setMessage(msg)
             setCancelable(false)
             setPositiveButton("确定", null)
             show()
-        }
+
+        }*/
+        val builder = AlertDialog.Builder(this)
+            .setTitle("提示")
+            .setMessage(msg)
+            .setCancelable(false)
+            .setPositiveButton("确定",null)
+            .show()
+        //圆角
+        builder.getWindow()?.setBackgroundDrawableResource(R.drawable.circle_bottom_list)
+
+        //设置button样式
+        //builder.getButton(DialogInterface.BUTTON_NEGATIVE).setBackgroundResource(R.drawable.circle_blue_list)
+
+        // 设置对话框的位置偏下
+        val window: Window? = builder.window
+        val wlp: WindowManager.LayoutParams = window!!.getAttributes()
+        wlp.gravity = Gravity.BOTTOM
+        val wm = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val display: Display = wm.defaultDisplay
+        wlp.width = display.getWidth()
+        window?.setAttributes(wlp)
     }
 }

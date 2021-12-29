@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.18703703703703703" />
+        <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable/circle_list.xml" value="0.19230769230769232" />
         <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable/dark_underline.xml" value="0.19074074074074074" />
         <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable/ic_addfriend.xml" value="0.15" />
         <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/drawable/ic_baseline_contacts_24.xml" value="0.1" />
@@ -50,6 +51,53 @@
         <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/86189/Desktop/2021autumn-A7-Blockchain-Based-IM/Blockchain-Based-IM-APP/app/src/main/res/xml/root_preferences.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/circle_bottom_list.xml" value="0.2962962962962963" />
+        <entry key="app/src/main/res/drawable/circle_list.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/circle_list0.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/circle_list01.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/dark_underline.xml" value="0.20520833333333333" />
+        <entry key="app/src/main/res/drawable/ic_addfriend.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_chat_24.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_contacts_24.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_mic_24.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_notifications_off_24.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_photo_24.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_forward01.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/drawable/ic_white_back.xml" value="0.20520833333333333" />
+        <entry key="app/src/main/res/drawable/underline.xml" value="0.21302083333333333" />
+        <entry key="app/src/main/res/layout/activity_addfriend.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_back_up_chat_history.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_change_my_name.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_change_remark.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_friend.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_helper.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_msg.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_new_friend.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_recover_chat_history.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_search_friend.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/activity_set_profile_picture.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/bg_sound.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/chat_item.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/dialog_set_font_size.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_contact.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/friends_item.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/msg_left_item.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/msg_right_item.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/new_friend.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/register.xml" value="0.196875" />
+        <entry key="app/src/main/res/layout/setting_item.xml" value="0.196875" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/menu/friend.xml" value="0.3541666666666667" />
+        <entry key="app/src/main/res/menu/msg_more_menu.xml" value="0.3541666666666667" />
       </map>
     </option>
   </component>

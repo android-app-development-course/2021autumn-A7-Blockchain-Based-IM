@@ -10,12 +10,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/light_grey">
+        android:background="@color/light_light_grey">
 
         <Button
             android:id="@+id/addFriendReturn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/ic_baseline_arrow_back_24"
             android:layout_gravity="center"/>
 
@@ -26,12 +27,10 @@
             android:layout_gravity="center"
             android:textSize="25sp"
             android:textColor="@color/black"
+            android:layout_marginRight="40dp"
             android:gravity="center"
             android:text="新朋友信息"/>
 
-        <LinearLayout
-            android:layout_width="60dp"
-            android:layout_height="match_parent"/>
 
     </LinearLayout>
 
@@ -80,6 +79,7 @@
         android:id="@+id/requestNewFriend"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/light_light_grey"
         android:textSize="25sp"
         android:text="申请添加"/>
 

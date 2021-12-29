@@ -2,8 +2,10 @@ package com.scnu.blockchain_based_im_app.ui.contact
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -15,6 +17,9 @@ import kotlinx.android.synthetic.main.activity_search_friend.*
 class SearchFriendActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+        }
         setContentView(R.layout.activity_search_friend)
         supportActionBar?.hide()
 
@@ -47,13 +52,20 @@ class SearchFriendActivity : AppCompatActivity() {
     }
 
     fun showDialog(msg: String) {
-        AlertDialog.Builder(this).apply {
+        /*AlertDialog.Builder(this).apply {
             setTitle("提示")
             setMessage(msg)
             setCancelable(false)
             setPositiveButton("确定", null)
             show()
-        }
+        }*/
+        val builder = AlertDialog.Builder(this)
+            .setTitle("提示")
+            .setMessage(msg)
+            .setCancelable(false)
+            .setPositiveButton("确定",null)
+            .show()
+        builder.getWindow()?.setBackgroundDrawableResource(R.drawable.circle_list)
     }
 
     @SuppressLint("Range")
