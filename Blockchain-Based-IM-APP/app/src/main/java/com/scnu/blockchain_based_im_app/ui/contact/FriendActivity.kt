@@ -1,6 +1,7 @@
 package com.scnu.blockchain_based_im_app.ui.contact
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
@@ -9,7 +10,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.DateFormat
-import android.view.View
+import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.scnu.blockchain_based_im_app.MainActivity
@@ -76,6 +77,15 @@ class FriendActivity : AppCompatActivity() {
                 .setNeutralButton("取消", null)
                 .show()
             builder.getWindow()?.setBackgroundDrawableResource(R.drawable.circle_list)
+
+            // 设置对话框的位置偏下
+            val window: Window? = builder.window
+            val wlp: WindowManager.LayoutParams = window!!.getAttributes()
+            wlp.gravity = Gravity.BOTTOM
+            val wm = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+            val display: Display = wm.defaultDisplay
+            wlp.width = display.getWidth()
+            window?.setAttributes(wlp)
 
         }
 

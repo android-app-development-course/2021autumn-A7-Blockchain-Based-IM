@@ -89,6 +89,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:paddingLeft="7dp"
                 android:background="@color/white"
                 android:maxLines="3" />
 

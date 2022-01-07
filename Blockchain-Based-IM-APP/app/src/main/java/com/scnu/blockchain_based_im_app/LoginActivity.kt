@@ -55,13 +55,23 @@ class LoginActivity : AppCompatActivity() {
             }
             else {
                 //如果登录失败，显示提示框，说明失败原因。
-                AlertDialog.Builder(this).apply {
+                /*AlertDialog.Builder(this).apply {
                     setTitle("提示")
                     setMessage(msg)
                     setCancelable(false)
                     setPositiveButton("确定", null)
                     show()
-                }
+                }*/
+
+                val builder = AlertDialog.Builder(this)
+                    .setTitle("提示")
+                    .setMessage(msg)
+                    .setCancelable(false)
+                    .setPositiveButton("确定",null)
+                    .show()
+                //圆角
+                builder.getWindow()?.setBackgroundDrawableResource(R.drawable.circle_list)
+
             }
 
         }

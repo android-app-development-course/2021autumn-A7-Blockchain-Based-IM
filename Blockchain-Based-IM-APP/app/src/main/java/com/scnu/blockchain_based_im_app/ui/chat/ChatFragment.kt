@@ -5,6 +5,7 @@ import android.database.Cursor
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.fragment_chat.*
 import com.scnu.blockchain_based_im_app.MainActivity
 import com.scnu.blockchain_based_im_app.MyDatabaseHelper
 import com.scnu.blockchain_based_im_app.ui.contact.Friend
+import kotlinx.android.synthetic.main.fragment_contact.*
 import java.io.ByteArrayOutputStream
 
 class ChatFragment : Fragment() {
@@ -58,6 +60,15 @@ class ChatFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        //下滑刷新
+        //val swip_refresh_layout: SwipeRefreshLayout =findViewById(R.id.swipeLayout);
+        swipeLayout01.setColorSchemeResources(R.color.green);
+        swipeLayout01.setOnRefreshListener {
+            Handler().postDelayed(
+                Runnable { swipeLayout01.isRefreshing = false }, 2000
+            )
+        }
     }
 
     override fun onResume() {

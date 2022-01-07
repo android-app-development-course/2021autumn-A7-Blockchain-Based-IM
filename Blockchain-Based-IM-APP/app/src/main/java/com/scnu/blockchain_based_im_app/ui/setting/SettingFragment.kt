@@ -72,6 +72,7 @@ class SettingFragment : Fragment() {
     @SuppressLint("Range")
     override fun onStart() {
         super.onStart()
+
         val dbHelper = MyDatabaseHelper(requireContext(), "IM_app.db", 2)
         val db = dbHelper.readableDatabase
         val cursor = db.rawQuery("select * from user where id=$userID",null)
@@ -86,6 +87,7 @@ class SettingFragment : Fragment() {
             profile_photo.setImageBitmap(bitmap)
         }
         cursor.close()
+
     }
 
     override fun onDestroyView() {

@@ -85,9 +85,6 @@ class AddFriendActivity : AppCompatActivity() {
         //圆角
         builder.getWindow()?.setBackgroundDrawableResource(R.drawable.circle_bottom_list)
 
-        //设置button样式
-        //builder.getButton(DialogInterface.BUTTON_NEGATIVE).setBackgroundResource(R.drawable.circle_blue_list)
-
         // 设置对话框的位置偏下
         val window: Window? = builder.window
         val wlp: WindowManager.LayoutParams = window!!.getAttributes()

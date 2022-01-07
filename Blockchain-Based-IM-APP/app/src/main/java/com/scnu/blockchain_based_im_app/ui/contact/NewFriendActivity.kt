@@ -8,11 +8,14 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.view.Window
 import android.widget.ListView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import com.scnu.blockchain_based_im_app.MainActivity
 import com.scnu.blockchain_based_im_app.MyDatabaseHelper
 import com.scnu.blockchain_based_im_app.R
@@ -32,6 +35,16 @@ class NewFriendActivity : AppCompatActivity() {
         }
         supportActionBar?.hide()
         setContentView(R.layout.activity_new_friend)
+
+        //下滑刷新
+        val swip_refresh_layout:SwipeRefreshLayout=findViewById(R.id.swipeLayout);
+        swip_refresh_layout.setColorSchemeResources(R.color.green);
+        swip_refresh_layout.setOnRefreshListener {
+            Handler().postDelayed(
+                Runnable { swip_refresh_layout.isRefreshing = false }, 2000
+            )
+        }
+
 
         newFriendReturn.setOnClickListener {
             finish()

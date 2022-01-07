@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
         android:background="@drawable/circle_list"
         android:queryHint="搜索用户id"/>
 

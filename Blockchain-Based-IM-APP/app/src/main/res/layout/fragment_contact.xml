@@ -36,15 +36,40 @@
             android:layout_gravity="center"/>
 
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
-        android:layout_height="0.7dp"
-        android:background="@color/light_grey"/>
+        android:layout_height="4dp"/>
 
-    <ListView
-        android:id="@+id/friendListView"
+    <SearchView
+        android:id="@+id/search_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="40dp"
+        android:layoutDirection="rtl"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="7dp"
+        android:background="@drawable/circle_list02"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/swipeLayout0">
+
+        <ListView
+            android:id="@+id/friendListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 
 </LinearLayout>

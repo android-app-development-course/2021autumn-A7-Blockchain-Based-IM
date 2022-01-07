@@ -34,9 +34,20 @@
         android:layout_height="0.7dp"
         android:background="@color/light_grey"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chatsRecycleView"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/swipeLayout01">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatsRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
 </LinearLayout>

@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.scnu.blockchain_based_im_app.MainActivity
 import com.scnu.blockchain_based_im_app.MyDatabaseHelper
